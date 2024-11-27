@@ -1,5 +1,5 @@
 theme: null
-permalink: none
 collections:
   notes:
     output: true
+    permalink: /:name:output_ext
