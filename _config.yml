@@ -1,2 +1,7 @@
 theme: null
-layouts_dir: /
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "/default"
