@@ -11,9 +11,10 @@
   {% endfor %}
 {% endif %}
 
-{% assign backlinks = site.documents | where_exp: "item", "item.content contains page.slug + page.ext" %}
-{% if backlinks.size %}
-  <h3>backlinks:</h3>
+{% assign all = site.pages | concat: site.documents %}
+{% assign backlinks = allP | where_exp: "item", "item.content contains page.slug + page.ext" %}
+{% if backlinks.size > 0 %}
+  <br><h3>backlinks:</h3>
   {% for backlink in backlinks %}
     <a href="{{ backlink.url }}">&lt; {{ backlink.title }}</a><br>
   {% endfor %}
