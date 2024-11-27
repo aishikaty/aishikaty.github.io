@@ -1,10 +1,10 @@
 <!doctype html>
 <meta name="viewport" content="width=device-width">
 <link rel="alternate" type="application/rss+xml" href="feed.xml">
-<style>body{font:1em/1.25 monospace;max-width:40em;white-space:pre-wrap}*{color:inherit}@media(prefers-color-scheme:dark){body{background-color:#000;color:#fff}}</style>
+<style>body{font:1em/1.25 monospace;max-width:40em;margin:1em}*{color:inherit;font:inherit;margin:0}h1,h2,h3{font-weight:bold}@media(prefers-color-scheme:dark){body{background-color:#000;color:#fff}}</style>
 <title>{{ page.title }}</title>
 {{ content }}
-{% if page.collection == "posts" %}
+{% if page.url == "/" %}
 {% for post in site.posts %}
 <a href="{{ post.url }}">{{ post.title }}</a>
 {% endfor %}
