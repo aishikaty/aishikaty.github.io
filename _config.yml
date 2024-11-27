@@ -1,7 +1,5 @@
 theme: null
 permalink: none
 collections:
-  backlinks:
-    output: false
-  pages:
+  notes:
     output: true
