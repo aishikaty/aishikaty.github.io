@@ -14,7 +14,8 @@
 
 {% assign link = page.url | slice: 1, page.url.size %}
 link: {{link}}<br>
-{% assign backlinks = posts | where_exp: "item", "item.content contains link and item.url != '/'" %}
+{% assign backlinks = posts | where_exp: "item", "item.content contains link" %}
+{% assign backlinks = backlinks | where_exp: "item", "item.url != '/'" %}
 {% if backlinks.size > 0 %}
   <br><h3>backlinks:</h3>
   {% for backlink in backlinks %}
