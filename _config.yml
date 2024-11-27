@@ -3,3 +3,8 @@ collections:
   notes:
     output: true
     permalink: /:name:output_ext
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
