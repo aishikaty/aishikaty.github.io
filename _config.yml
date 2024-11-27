@@ -1,1 +1,6 @@
 theme: null
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "/_default.html"
