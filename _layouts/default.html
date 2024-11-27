@@ -13,7 +13,7 @@
   {% endfor %}
 {% endif %}
 
-{% assign link = page.slug | append: page.ext %}
+{% assign link = page.url | slice: 1, page.url.size %}
 link: {{link}}<br>
 {% assign backlinks = posts | where_exp: "item", "item.content contains link" %}
 {% if backlinks.size > 0 %}
