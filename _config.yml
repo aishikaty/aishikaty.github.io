@@ -2,7 +2,7 @@ theme: null
 collections:
   notes:
     output: true
-    permalink: /:name:output_ext
+    permalink: /:name/
 defaults:
   - scope:
       path: ""

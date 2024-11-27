@@ -1,4 +1,4 @@
 ---
 title: page a
 ---
-[page b](b.html)
+[page b](b/)
