@@ -6,12 +6,6 @@
 <h1>{{ page.title }}</h1>
 {{ content }}
 
-{% if page.url == "/" %}
-  {% for note in site.notes %}
-    <a href="{{ note.url }}">{{ note.title }}</a><br>
-  {% endfor %}
-{% endif %}
-
 {% assign link = page.url | slice: 1, page.url.size %}
 {% assign backlinks = site.notes | where_exp: "item", "item.content contains link" %}
 {% assign backlinks = backlinks | where_exp: "item", "item.url != '/'" %}
