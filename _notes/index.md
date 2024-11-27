@@ -1,1 +1,3 @@
-# my notes
+---
+title: my notes
+---

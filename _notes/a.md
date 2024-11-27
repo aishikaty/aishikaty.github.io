@@ -1,2 +1,4 @@
-# page a
+---
+title: page a
+---
 [page b](b.html)
