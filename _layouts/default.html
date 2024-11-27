@@ -4,4 +4,15 @@
 <style>body{font:18px/1.25 monospace;max-width:40em;margin:1em}*{color:inherit;font:inherit;margin:0}h1,h2,h3{font-weight:bold}@media(prefers-color-scheme:dark){html{background-color:#000;color:#fff}}</style>
 <title>{{ page.title }}</title>
 {{ content }}
-{% if page.url == "/" %}{% for post in site.posts %}<a href="{{ post.url }}">{{ post.title }}</a>{% endfor %}{% endif %}
+
+{% if page.url == "/" %}
+  {% for post in site.documents %}
+    <a href="{{ post.url }}">&gt; {{ post.title }}</a><br>
+  {% endfor %}
+{% endif %}
+
+<h3>backlinks:</h3>
+{% assign backlinks = site.documents | where_exp: "page", "page.content contains page.url" %}
+{% for backlink in backlinks %}
+  <a href="{{ backlink.url }}">&lt;{{ backlink.title }}</a><br>
+{% endfor %}
