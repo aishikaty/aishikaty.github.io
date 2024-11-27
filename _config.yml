@@ -3,3 +3,5 @@ permalink: none
 collections:
   backlinks:
     output: false
+  pages:
+    output: true

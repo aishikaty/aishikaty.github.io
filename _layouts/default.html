@@ -3,7 +3,6 @@
 <link rel="alternate" type="application/rss+xml" href="feed.xml">
 <style>body{font:18px/1.25 monospace;max-width:40em;margin:1em}*{color:inherit;font:inherit;margin:0}h1,h2,h3{font-weight:bold}@media(prefers-color-scheme:dark){html{background-color:#000;color:#fff}}</style>
 <title>{{ page.title }}</title>
-{% if page.title %}<h1>{{page.title}}</h1>{% endif %}
 {{ content }}
 
 {% assign posts = site.pages | concat: site.documents %}
@@ -15,7 +14,7 @@
 
 {% assign link = page.url | slice: 1, page.url.size %}
 link: {{link}}<br>
-{% assign backlinks = posts | where_exp: "item", "item.content contains link" %}
+{% assign backlinks = posts | where_exp: "item", "item.content contains link and item.url != '/'" %}
 {% if backlinks.size > 0 %}
   <br><h3>backlinks:</h3>
   {% for backlink in backlinks %}
