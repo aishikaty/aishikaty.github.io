@@ -13,7 +13,7 @@
   {% endfor %}
 {% endif %}
 
-{% assign backlinks = posts | where_exp: "item", "item.content contains (page.slug | append: page.ext") %}
+{% assign backlinks = posts | where_exp: "item", "item.content contains page.slug | append: page.ext" %}
 {% if backlinks.size > 0 %}
   <br><h3>backlinks:</h3>
   {% for backlink in backlinks %}
