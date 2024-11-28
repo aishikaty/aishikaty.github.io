@@ -8,7 +8,6 @@
 
 {% assign link = page.url | slice: 1, page.url.size | prepend: "(" | append: ")" %}
 {% assign backlinks = site.notes | where_exp: "i", "i.content contains link" %}
-{% assign backlinks = backlinks | where_exp: "i", "i.url != '/'" %}
 {% assign backlinks = backlinks | where_exp: "i", "i.url != page.url" %}
 {% if backlinks.size > 0 %}
   <br><h3>backlinks:</h3>
