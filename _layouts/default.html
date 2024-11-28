@@ -4,14 +4,14 @@
 <style>body{font:18px/1.25 monospace;max-width:40em;margin:1em}*{color:inherit;font:inherit;margin:0}h1,h2,h3{font-weight:bold}@media(prefers-color-scheme:dark){html{background-color:#000;color:#fff}}</style>
 <title>{{ page.title }}</title>
 <h1>{{ page.title }}</h1>
-{{ content | newline_to_br }}
+{{ content }}
 
 {% assign link = page.url | slice: 1, page.url.size %}
 {% assign backlinks = site.notes | where_exp: "i", "i.content contains link" %}
 {% assign backlinks = backlinks | where_exp: "i", "i.url != page.url" %}
 {% if backlinks.size > 0 %}
-  <br><h3>backlinks:</h3>
-  {% for backlink in backlinks %}
-    <a href="{{ backlink.url }}">{{ backlink.title }}</a><br>
-  {% endfor %}
+<br><h3>backlinks:</h3>
+{% for backlink in backlinks %}
+<a href="{{ backlink.url }}">{{ backlink.title }}</a><br>
+{% endfor %}
 {% endif %}
